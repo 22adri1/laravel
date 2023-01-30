@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(136, 117, 117);
+}
+.letter {
+  width: 8.5in;
+  height: 11in;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 8in;
+  height: 10.5in;
+  margin: 0.25in 0.25in 2cm 0.25in;
+  background-color: white;
+  padding: 0.5in;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
