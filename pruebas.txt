@@ -1,0 +1,159 @@
+
+
+
+
+<header>
+  <!-- <nav>
+    <a href="#about">Acerca de</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+  </nav>  como poner imagenes en un header-->
+
+</header>
+<main>
+  <!-- <section id="about">
+    <h2>Acerca de nosotros</h2>
+    <p>Información sobre la empresa</p>
+  </section>
+  <section id="services">
+    <h2>Nuestros servicios</h2>
+    <ul>
+      <li>Servicio 1</li>
+      <li>Servicio 2</li>
+      <li>Servicio 3</li>
+    </ul>
+  </section> -->
+  <section id="contact">
+    <h2>Contacto</h2>
+    <form>
+        <label for="nameTec">NOMBRE DEL TECNICO:</label>
+        <select id="names" name="names">
+          <option value="juan">Christian Diaz</option>
+          <option value="maria">SubOficial </option>
+          <option value="pedro">Sargento</option>
+          <option value="isabel">Adrian Rodriguez Zelada</option>
+      </select>
+        <br>
+        <label for="nameUsu">NOMBRE DEL USUARIO:</label>
+        <input type="text" id="age" name="age">
+        <br>
+        <label for="repartition">REPARTICION:</label>
+        <select id="names" name="names">
+            <option value="juan">informatica</option>
+            <option value="maria">direccion general</option>
+            <option value="pedro">Pedro</option>
+            <option value="isabel">Isabel</option>
+        </select>
+        <br>
+        <label for="piso">PISO:</label>
+        <input type="number" id="age" name="age">
+        <br>
+        <label for="fechAten">FECHA DE ATENCION:</label>
+        <input type="text" id="address" name="address">
+        <br>
+        
+    </form>
+    <form>
+        <label for="names">Selecciona un nombre:</label>
+        <select id="names" name="names">
+        <option value="juan">Juan</option>
+        <option value="maria">Maria</option>
+        <option value="pedro">Pedro</option>
+        <option value="isabel">Isabel</option>
+        </select>
+
+    </form>
+  </section>
+</main>
+<input type="button" value="Imprimir" onclick="printForm()">
+<footer>
+  <p>Unidad de Sistemas e Informatica</p>
+</footer>
+
+
+
+
+
+
+document.getElementById("add-button").addEventListener("click", function(){
+  var table = document.getElementById("table-select");
+  var row = document.createElement("tr");
+  var tdSelect = document.createElement("td");
+  var label = document.createElement("label");
+  label.innerHTML = "Seleccione otro color:";
+  var newSelect = document.createElement("select");
+  newSelect.id = "color2";
+  newSelect.name = "color2";
+  var options = document.getElementById("color").options;
+  for (var i = 0; i < options.length; i++) {
+    var option = document.createElement("option");
+    option.value = options[i].value;
+    option.text = options[i].text;
+    newSelect.appendChild(option);
+  }
+  tdSelect.appendChild(label);
+  tdSelect.appendChild(newSelect);
+  row.appendChild(tdSelect);
+  var tdButton = document.createElement("td");
+  var button = document.createElement("button");
+  button.innerHTML = "Agregar seleccionador";
+  button.id = "add-button";
+  button.setAttribute("onclick", "addSelect()");
+  tdButton.appendChild(button);
+  row.appendChild(tdButton);
+  table.appendChild(row);
+});
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function addSelect() {
+        var table = document.getElementById("table-select");
+        var row = document.createElement("tr");
+        var tdSelect = document.createElement("td");
+        var label = document.createElement("label");
+        label.innerHTML = "Seleccione otro color:";
+        var newSelect = document.createElement("select");
+        newSelect.id = "color2";
+        newSelect.name = "color2";
+        var options = document.getElementById("color").options;
+        for (var i = 0; i < options.length; i++) {
+          var option = document.createElement("option");
+          option.value = options[i].value;
+          option.text = options[i].text;
+          newSelect.appendChild(option);
+        }
+        tdSelect.appendChild(label);
+        tdSelect.appendChild(newSelect);
+        row.appendChild(tdSelect);
+        var tdButton = document.createElement("td");
+        var button
+        button.innerHTML = "Agregar seleccionador";
+        button.id = "add-button";
+        button.setAttribute("onclick", "addSelect()");
+        tdButton.appendChild(button);
+        row.appendChild(tdButton);
+        table.appendChild(row);
+      }
+    </script>
+  </head>
+  <body>
+    <table id="table-select">
+      <tr>
+        <td>
+          <label for="color">Seleccione un color:</label>
+          <select id="color" name="color">
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <button id="add-button" onclick="addSelect()">Agregar seleccionador</button>
+  </body>
+</html>
